@@ -18,7 +18,7 @@ Install oeml-api:
 $ helm install oeml-api coinapi-charts/oeml-api -f acct-dev.yaml --set oemlAPI.tag={version}
 ```
 
-## Settings
+## Configuration
 
 Using WebUI (oeml-api/values.yaml)
 
