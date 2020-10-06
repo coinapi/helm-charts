@@ -1,3 +1,5 @@
+[![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/coinapi)](https://artifacthub.io/packages/search?repo=coinapi)
+
 # OEML API
 
 Order and Execution Management Layer (OEML) is a self-hosted software that managing orders, executions and exposure in an efficient, fast, cost-effective, and straightforward manner. An OEML allows you to route orders to multiple cryptocurrency exchanges simultaneously using a simple, robust, and unified Application Programming Interface (API).
