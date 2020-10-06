@@ -17,3 +17,41 @@ Install oeml-api:
 ```console
 $ helm install coinapi-charts/oeml-api --set oemlAPI.tag={version}
 ```
+
+## Settings
+
+Using WebUI (oeml-api/values.yaml)
+
+```console
+webUI:
+  enabled: true
+```
+
+Using composite (oeml-api/values.yaml)
+
+```console
+oemlCompositeAPI:
+  enabled: true
+```
+
+Setting the CoinAPI key (oeml-api/values.yaml)
+
+```console
+extraEnv:
+  - name: CoinAPI__ApiKey
+    value: "{ApiKey}"
+```    
+
+Use of the stock exchange (oeml-api/acct-dev.yaml)
+
+```console
+accounts:
+  - name: binance
+    env:
+      - name: OEML__ExchangeId
+        value: "BINANCE"
+      - name: OD__PublicApiKey
+        value: "{PublicApiKey}"
+      - name: OD__PrivateApiKey
+        value: "{PrivateApiKey}"
+```
