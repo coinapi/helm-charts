@@ -15,7 +15,7 @@ $ helm repo add coinapi-charts https://coinapi.github.io/coinapi-charts/
 Install oeml-api:
 
 ```console
-$ helm install coinapi-charts/oeml-api --set oemlAPI.tag={version}
+$ helm install oeml-api coinapi-charts/oeml-api -f acct-dev.yaml --set oemlAPI.tag={version}
 ```
 
 ## Settings
