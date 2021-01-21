@@ -15,6 +15,10 @@ webUI:
 oemlCompositeAPI:
   enabled: true
   repository: coinapi/oeml-api
+  
+oemlStrategyAPI:
+  enabled: true
+  repository: coinapi/oeml-strategy
 
 imagePullSecrets: {}
 nameOverride: ""
