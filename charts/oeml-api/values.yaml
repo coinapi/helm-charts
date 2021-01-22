@@ -17,7 +17,7 @@ oemlCompositeAPI:
   repository: coinapi/oeml-api
   
 oemlStrategyAPI:
-  enabled: true
+  enabled: false
   repository: coinapi/oeml-strategy
 
 imagePullSecrets: {}
