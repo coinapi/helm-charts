@@ -29,8 +29,8 @@ spec:
       containers:
         - name: {{ $.Chart.Name }}
           env:
-            {{- if $.Values.extraEnv }}
-              {{ toYaml $.Values.extraEnv | nindent 12 }}
+            {{- if $.Values.extraEnvStrategy }}
+              {{ toYaml $.Values.extraEnvStrategy | nindent 12 }}
             {{- end }}
             {{- if .env }}
               {{ toYaml .env | nindent 12 }}
