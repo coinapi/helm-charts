@@ -1,0 +1,16 @@
+{{ range $ds := .Values.accounts }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: oeml-api-{{ .name | lower }}
+  labels:
+    app: oeml-api-{{ .name | lower }}
+    release: prom
+spec:
+  selector:
+    matchLabels:
+      app: oeml-api-{{ .name | lower }}
+  endpoints:
+  - port: http
+---
+{{- end }}
