@@ -1,0 +1,15 @@
+{{ range $ds := .Values.accounts }}
+kind: Service
+apiVersion: v1
+metadata:
+  name: oeml-api-{{ .name | lower }}
+  labels:
+    app: oeml-api-{{ .name | lower }}
+spec:
+  selector:
+    app: oeml-api-{{ .name | lower }}
+  ports:
+    - name: http
+      port: 80
+---
+{{- end }}
