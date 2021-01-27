@@ -4,8 +4,8 @@ kind: Deployment
 metadata:
   name: oeml-api-{{ .name | lower }}
   labels:
-    app: oeml-api
-    version: {{ $.Values.oemlAPI.tag | default $.Chart.AppVersion | quote }}
+    app: oeml-api-{{ .name | lower }}
+#     version: {{ $.Values.oemlAPI.tag | default $.Chart.AppVersion | quote }}
 spec:
   revisionHistoryLimit: 10
   replicas: 1
@@ -19,8 +19,8 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        name: oeml-api-{{ .name | lower }}
-        app: oeml-api
+        name: oeml-api
+#         app: oeml-api
     spec:
       {{- with $.Values.imagePullSecrets }}
       imagePullSecrets:
