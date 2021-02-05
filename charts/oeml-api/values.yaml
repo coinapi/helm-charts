@@ -5,7 +5,7 @@
 oemlAPI:
   repository: coinapi/oeml-api
   pullPolicy: IfNotPresent
-  usePrometheus: enabled
+  usePrometheus: true
   # Overrides the image tag whose default is the chart version.
   tag: ""
 
