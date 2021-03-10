@@ -3,6 +3,9 @@ kind: Service
 apiVersion: v1
 metadata:
   name: oeml-api-{{ .name | lower }}
+  annotations:
+    'consul.hashicorp.com/service-meta-ServiceName': oeml-api
+    'consul.hashicorp.com/service-meta-ShardingKey': {{ .name | upper }}
   labels:
     app: oeml-api-{{ .name | lower }}
 spec:
