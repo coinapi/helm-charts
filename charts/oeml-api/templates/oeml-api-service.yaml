@@ -4,7 +4,7 @@ apiVersion: v1
 metadata:
   name: oeml-api-{{ .name | lower }}
   annotations:
-    'consul.hashicorp.com/service-tags': coinapi-marketaccesstrading
+    'consul.hashicorp.com/service-tags': 'coinapi-marketaccesstrading,prometheus-metrics'
     'consul.hashicorp.com/service-meta-ShardingKey': {{ .name | upper }}
   labels:
     app: oeml-api-{{ .name | lower }}
