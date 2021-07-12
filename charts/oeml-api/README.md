@@ -9,7 +9,7 @@ Order and Execution Management Layer (OEML) is a self-hosted software that manag
 Add the Repository to Helm:
 
 ```console
-$ helm repo add coinapi-charts https://coinapi.github.io/coinapi-charts/
+$ helm repo add coinapi-charts https://coinapi.github.io/helm-charts/
 ```
 
 Install oeml-api:
