@@ -7,7 +7,7 @@ oemlAPI:
   pullPolicy: IfNotPresent
   usePrometheus: true
   # Overrides the image tag whose default is the chart version.
-  tag: ""
+  tag: "latest"
 
 webUI:
   enabled: true
