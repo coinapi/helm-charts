@@ -6,13 +6,21 @@ Order and Execution Management Layer (OEML) is a self-hosted software that manag
 
 ## Installing Charts from this Repository
 
-Add the Repository to Helm:
+#### Add the Repository to Helm
 
 ```console
 $ helm repo add coinapi-charts https://coinapi.github.io/helm-charts/
 ```
 
-Install oeml-api:
+#### Install oeml-api latest version
+
+```console
+$ helm install oeml-api coinapi-charts/oeml-api -f acct-dev.yaml
+```
+
+#### Install oeml-api custom version
+
+Version listing available here: http://coinapi-releases.s3-website-us-east-1.amazonaws.com/?prefix=oeml-api/
 
 ```console
 $ helm install oeml-api coinapi-charts/oeml-api -f acct-dev.yaml --set oemlAPI.tag={version}
@@ -42,7 +50,7 @@ extraEnv:
     value: "{ApiKey}"
 ```    
 
-Use of the stock exchange (oeml-api/acct-dev.yaml)
+Specify listing of the accounts that OEML should manage (oeml-api/acct-dev.yaml)
 
 ```console
 accounts:

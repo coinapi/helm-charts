@@ -4,8 +4,7 @@ kind: Deployment
 metadata:
   name: oeml-api-composite
   labels:
-    app: oeml-api
-    version: {{ $.Values.oemlAPI.tag | default $.Chart.AppVersion | quote }}
+    app: oeml-api-composite
 spec:
   revisionHistoryLimit: 10
   replicas: 1
@@ -64,7 +63,7 @@ spec:
                  fieldPath: metadata.namespace
           securityContext:
             {{- toYaml $.Values.securityContext | nindent 12 }}
-          image: "{{ $.Values.oemlCompositeAPI.repository }}:{{ $.Values.oemlAPI.tag | default $.Chart.AppVersion }}"
+          image: "{{ $.Values.oemlCompositeAPI.repository }}:{{ $.Values.oemlAPI.tag }}"
           imagePullPolicy: {{ $.Values.oemlAPI.pullPolicy }}
           ports:
             - name: http
