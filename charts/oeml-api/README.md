@@ -63,3 +63,36 @@ accounts:
       - name: OD__PrivateApiKey
         value: "{PrivateApiKey}"
 ```
+
+## Complete deployment example
+
+```
+helm repo add coinapi-charts https://coinapi.github.io/helm-charts/
+helm repo update
+cat > my-values.yaml << EOF
+extraEnv:
+  - name: OEML__Port
+    value: "80"
+  - name: CoinAPI__ApiKey
+    value: "YOUR_COINAPI_APIKEY"
+
+accounts:
+  - name: "binanceuat-1"
+    env:
+      - name: OEML__ExchangeId
+        value: "BINANCEUAT/1"
+      - name: OD__PublicApiKey
+        value: "XX"
+      - name: OD__PrivateApiKey
+        value: "YY"
+  - name: "binanceuat-2"
+    env:
+      - name: OEML__ExchangeId
+        value: "BINANCEUAT/2"
+      - name: OD__PublicApiKey
+        value: "XXX"
+      - name: OD__PrivateApiKey
+        value: "YYY"
+EOF
+helm install oeml-api coinapi-charts/oeml-api -f my-values.yaml --set oemlAPI.tag="1.8707"
+```
