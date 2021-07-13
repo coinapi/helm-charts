@@ -64,7 +64,7 @@ spec:
                  fieldPath: metadata.namespace
           securityContext:
             {{- toYaml $.Values.securityContext | nindent 12 }}
-          image: "{{ $.Values.oemlAPI.repository }}:{{ $.Values.oemlAPI.tag | default $.Chart.AppVersion }}"
+          image: "{{ $.Values.oemlAPI.repository }}:{{ $.Values.oemlAPI.tag }}"
           imagePullPolicy: {{ $.Values.oemlAPI.pullPolicy }}
           ports:
             - name: http
