@@ -5,7 +5,6 @@ metadata:
   name: oeml-api-strategy
   labels:
     app: oeml-api-strategy
-    version: {{ $.Values.oemlAPI.tag }}
 spec:
   revisionHistoryLimit: 10
   replicas: 1
