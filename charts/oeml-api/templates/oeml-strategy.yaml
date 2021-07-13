@@ -5,7 +5,7 @@ metadata:
   name: oeml-api-strategy
   labels:
     app: oeml-api-strategy
-    version: {{ $.Values.oemlAPI.tag | default $.Chart.AppVersion | quote }}
+    version: {{ $.Values.oemlAPI.tag }}
 spec:
   revisionHistoryLimit: 10
   replicas: 1
@@ -64,7 +64,7 @@ spec:
                  fieldPath: metadata.namespace
           securityContext:
             {{- toYaml $.Values.securityContext | nindent 12 }}
-          image: "{{ $.Values.oemlStrategyAPI.repository }}:{{ $.Values.oemlAPI.tag | default $.Chart.AppVersion }}"
+          image: "{{ $.Values.oemlStrategyAPI.repository }}:{{ $.Values.oemlAPI.tag }}"
           imagePullPolicy: {{ $.Values.oemlAPI.pullPolicy }}
           ports:
             - name: http
