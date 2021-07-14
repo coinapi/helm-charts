@@ -127,10 +127,12 @@ oeml-api-composite      NodePort    10.112.8.159    <none>        80:30578/TCP
 oeml-webui              NodePort    10.112.4.195    <none>        80:30857/TCP              
 ```
 
-## 5) Connect to composite API
+## 5) Connect to OEML API
 
 The composite pod gives unified access to all connected exchanges & accounts. Therefore,
 the oeml-api-composite is the only pod required to connect to the OEML system.
+
+### Connect from within the cluster 
 
 Deploy a pod with a shell
 
@@ -189,17 +191,6 @@ Expected output:
         "last_updated_by": "EXCHANGE",
         "rate_usd": null
       },
-      {
-        "id": "ETH",
-        "asset_id_exchange": "ETH",
-        "asset_id_coinapi": null,
-        "balance": 100.00000000,
-        "available": 100.00000000,
-        "locked": 0.00000000,
-        "traded": 0.0,
-        "last_updated_by": "EXCHANGE",
-        "rate_usd": null
-      },
       // more entries
       ]
   }
@@ -214,4 +205,44 @@ exit
 Delete shell pod
 ```
 kubectl delete pod shell-demo
+```
+
+
+### Connect cluster to localhost
+
+Port-forward from cluster port 80 to localhost port 8080
+```
+ kubectl port-forward service/oeml-api-composite 8080:80
+```
+
+Expected output:
+```
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+```
+
+CURL account balance.
+```
+curl localhost:8080/v1/balances --header 'Accept: application/json'
+```
+
+
+
+Expected output:
+```
+[
+  {
+    "type": "BALANCE_SNAPSHOT",
+    "exchange_id": "BINANCE",
+  },
+  {
+    "type": "BALANCE_SNAPSHOT",
+    "exchange_id": "BINANCEUAT",
+    "data": [
+      {
+      // more entries
+      },
+      ]
+  }
+]
 ```
