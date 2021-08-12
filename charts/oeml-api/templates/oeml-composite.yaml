@@ -34,6 +34,8 @@ spec:
             {{- if .env }}
               {{ toYaml .env | nindent 12 }}
             {{- end }}
+            - name: OEML__Port
+              value: "80"
             - name: OEML__LocalAddress
               valueFrom:
                 fieldRef:
