@@ -34,8 +34,6 @@ oemlCompositeAPI:
 
 # Setting the CoinAPI key (oeml-api/values.yaml)
 extraEnv:
-  - name: OEML__Port
-    value: "80"
   - name: CoinAPI__ApiKey
     value: "YOUR_COINAPI_APIKEY"
 
