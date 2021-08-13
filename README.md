@@ -13,4 +13,4 @@ $ helm repo update
 
 #### OEML API Sample deployment
 
-Guide was moved to the documentation section (here)[http://dev.docs.coinapi.io/oeml.html#running-on-kubernetes-cluster].
+Guide was moved to the documentation section [here](http://dev.docs.coinapi.io/oeml.html#running-on-kubernetes-cluster).
