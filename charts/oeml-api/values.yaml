@@ -10,7 +10,7 @@ oemlAPI:
   tag: "latest"
 
 webUI:
-  enabled: true
+  enabled: false
   repository: coinapi/oeml-webui
 
 oemlCompositeAPI:
