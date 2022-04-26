@@ -11,6 +11,6 @@ $ helm repo add coinapi-charts https://coinapi.github.io/helm-charts/
 $ helm repo update
 ```
 
-#### OEML API Sample deployment
+#### EMS API Sample deployment
 
 Guide was moved to the documentation section [here](https://docs.coinapi.io/oeml.html#running-on-kubernetes-cluster).
