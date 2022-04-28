@@ -4,13 +4,15 @@ kind: Deployment
 metadata:
   name: oeml-api-{{ .name | lower }}
   labels:
-    app: oeml-api-{{ .name | lower }}
+    name: oeml-api-{{ .name | lower }}
+    app: oeml-api
 spec:
   revisionHistoryLimit: 10
   replicas: 1
   selector:
     matchLabels:
       name: oeml-api-{{ .name | lower }}
+      app: oeml-api
   template:
     metadata:
     {{- with $.Values.podAnnotations }}
@@ -19,7 +21,7 @@ spec:
     {{- end }}
       labels:
         name: oeml-api-{{ .name | lower }}
-        app: oeml-api-{{ .name | lower }}
+        app: oeml-api
     spec:
       {{- with $.Values.imagePullSecrets }}
       imagePullSecrets:
