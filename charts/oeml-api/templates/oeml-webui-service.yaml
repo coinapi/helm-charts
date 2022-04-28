@@ -1,3 +1,4 @@
+{{ if .Values.webUI.enabled }}
 kind: Service
 apiVersion: v1
 metadata:
@@ -8,3 +9,4 @@ spec:
     - port: 80
   selector:
     name: oeml-webui
+{{- end }}
