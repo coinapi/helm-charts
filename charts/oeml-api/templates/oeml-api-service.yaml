@@ -7,10 +7,12 @@ metadata:
     'consul.hashicorp.com/service-tags': 'coinapi-marketaccesstrading,prometheus-metrics'
     'consul.hashicorp.com/service-meta-ShardingKey': {{ .name | upper }}
   labels:
-    app: oeml-api-{{ .name | lower }}
+    name: oeml-api-{{ .name | lower }}
+    app: oeml-api
 spec:
   selector:
-    app: oeml-api-{{ .name | lower }}
+    name: oeml-api-{{ .name | lower }}
+    app: oeml-api
   ports:
     - name: http
       port: 80
