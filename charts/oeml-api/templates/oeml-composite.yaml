@@ -2,16 +2,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: oeml-api-composite
+  name: ems-gateway
   labels:
-    name: oeml-api-composite
+    name: ems-gateway
     app: oeml-api
 spec:
   revisionHistoryLimit: 10
   replicas: 1
   selector:
     matchLabels:
-      name: oeml-api-composite
+      name: ems-gateway
       app: oeml-api
   template:
     metadata:
@@ -20,7 +20,7 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        name: oeml-api-composite
+        name: ems-gateway
         app: oeml-api
     spec:
       {{- with $.Values.imagePullSecrets }}
