@@ -4,13 +4,15 @@ kind: Deployment
 metadata:
   name: oeml-api-composite
   labels:
-    app: oeml-api-composite
+    name: oeml-api-composite
+    app: oeml-api
 spec:
   revisionHistoryLimit: 10
   replicas: 1
   selector:
     matchLabels:
       name: oeml-api-composite
+      app: oeml-api
   template:
     metadata:
     {{- with $.Values.podAnnotations }}
