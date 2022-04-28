@@ -11,6 +11,9 @@ oemlAPI:
   
 accounts:
 
+CoinAPI:
+  APIKey: "YOUR-COINAPI-APIKEY-HERE"
+
 webUI:
   enabled: false
   repository: coinapi/oeml-webui
@@ -64,7 +67,4 @@ tolerations:
 affinity: {}
 
 extraEnv:
-  - name: OEML__Port
-    value: "80"
-  - name: CoinAPI__ApiKey
-    value: "######"
+
