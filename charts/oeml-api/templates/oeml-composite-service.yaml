@@ -4,6 +4,7 @@ metadata:
   name: oeml-api-composite
   annotations:
     'consul.hashicorp.com/service-tags': 'prometheus-metrics'
+    'consul.hashicorp.com/service-meta-coinapikey': {{ .values.CoinAPI.APIKey | lower }}
   labels:
     app: oeml-api-composite
 spec:
