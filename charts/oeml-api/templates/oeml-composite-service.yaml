@@ -1,16 +1,17 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: oeml-api-composite
+  name: ems-gateway
   annotations:
     'consul.hashicorp.com/service-tags': 'prometheus-metrics'
-    'consul.hashicorp.com/service-meta-coinapikey': {{ $.Values.coinapi.apikey | lower }}
+    'consul.hashicorp.com/service-meta-coinapi-apikey': {{ $.Values.coinapi.apikey | lower }}
+    'consul.hashicorp.com/service-meta-ems-api-type': 'GATEWAY'
   labels:
-    name: oeml-api-composite
+    name: ems-gateway
     app: oeml-api
 spec:
   selector:
-    name: oeml-api-composite
+    name: ems-gateway
     app: oeml-api
   ports:
     - name: http
