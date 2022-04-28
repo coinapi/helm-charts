@@ -11,8 +11,8 @@ oemlAPI:
   
 accounts:
 
-CoinAPI:
-  APIKey: "YOUR-COINAPI-APIKEY-HERE"
+coinapi:
+  apikey: "YOUR-COINAPI-APIKEY-HERE"
 
 webUI:
   enabled: false
