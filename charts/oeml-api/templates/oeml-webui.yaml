@@ -1,4 +1,4 @@
-{{ if .Values.webUI }}
+{{ if .Values.webUI.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
