@@ -36,6 +36,8 @@ spec:
             {{- if .env }}
               {{ toYaml .env | nindent 12 }}
             {{- end }}
+            - name: CoinAPI__ApiKey
+              value: {{ $.Values.CoinAPI.APIKey }}
             - name: OEML__Port
               value: "80"
             - name: OEML__LocalAddress
