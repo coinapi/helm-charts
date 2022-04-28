@@ -6,6 +6,7 @@ metadata:
   annotations:
     'consul.hashicorp.com/service-tags': 'coinapi-marketaccesstrading,prometheus-metrics'
     'consul.hashicorp.com/service-meta-ShardingKey': {{ .name | upper }}
+    'consul.hashicorp.com/service-meta-ems-api-type': 'EXCHANGE'
   labels:
     name: oeml-api-{{ .name | lower }}
     app: oeml-api
