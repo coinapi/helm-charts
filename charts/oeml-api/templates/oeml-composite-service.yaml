@@ -6,10 +6,12 @@ metadata:
     'consul.hashicorp.com/service-tags': 'prometheus-metrics'
     'consul.hashicorp.com/service-meta-coinapikey': {{ .values.CoinAPI.APIKey | lower }}
   labels:
-    app: oeml-api-composite
+    name: oeml-api-composite
+    app: oeml-api
 spec:
   selector:
-    app: oeml-api-composite
+    name: oeml-api-composite
+    app: oeml-api
   ports:
     - name: http
       port: 80
