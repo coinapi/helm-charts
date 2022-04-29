@@ -39,7 +39,7 @@ spec:
             - name: CoinAPI__ApiKey
               value: {{ $.Values.coinapi.apikey }}
             - name: CoinAPI__SandboxMode
-              value: {{ $.Values.coinapi.sandbox }}                      
+              value: "{{ $.Values.coinapi.sandbox }}"
             - name: OEML__Port
               value: "80"
             - name: OEML__LocalAddress
