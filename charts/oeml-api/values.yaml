@@ -8,6 +8,7 @@ oemlAPI:
   usePrometheus: true
   # Overrides the image tag whose default is the chart version.
   tag: "3.0-latest"
+  datacenter: ""
   
 accounts:
 
