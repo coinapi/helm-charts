@@ -13,7 +13,6 @@ accounts:
 
 coinapi:
   apikey: "YOUR-COINAPI-APIKEY-HERE"
-  sandbox: false
 
 webUI:
   enabled: false
