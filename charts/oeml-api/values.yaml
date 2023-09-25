@@ -7,13 +7,12 @@ oemlAPI:
   pullPolicy: IfNotPresent
   usePrometheus: true
   # Overrides the image tag whose default is the chart version.
-  tag: "14895"
+  tag: "24124"
   
 accounts:
 
 coinapi:
   apikey: "YOUR-COINAPI-APIKEY-HERE"
-  sandbox: false
 
 webUI:
   enabled: false
