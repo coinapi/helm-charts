@@ -16,7 +16,6 @@ spec:
   ports:
     - name: http
       port: 80
-  ports:
     - name: https
       port: 443
 ---
