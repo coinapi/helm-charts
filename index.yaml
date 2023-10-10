@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   oeml-api:
   - apiVersion: v1
+    created: "2023-10-10T12:03:43.985831699Z"
+    description: A Helm chart for CoinAPI Market Access Execution Layer
+    digest: dc5a302b229dea3ce2df2102b8aa58b9dd59822c0cd4eacf51b24ac2d74bae7d
+    name: oeml-api
+    type: application
+    urls:
+    - https://github.com/coinapi/helm-charts/releases/download/oeml-api-1.8.24883/oeml-api-1.8.24883.tgz
+    version: 1.8.24883
+  - apiVersion: v1
     created: "2023-10-05T09:18:01.930372278Z"
     description: A Helm chart for CoinAPI Market Access Execution Layer
     digest: f123359860deaad30a5b6f7f550384c72e238d154614b5c4457500858dfe7b05
