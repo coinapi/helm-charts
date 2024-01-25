@@ -7,7 +7,7 @@ oemlAPI:
   pullPolicy: IfNotPresent
   usePrometheus: true
   # Overrides the image tag whose default is the chart version.
-  tag: "25162"
+  tag: "27940"
   
 accounts:
 
